@@ -76,7 +76,7 @@ Creates a shortened URL.
 
 ```json
 {
-  "slug": "aB3xYz"
+    "url": "https://xxx.com/DXB6V"
 }
 ```
 
