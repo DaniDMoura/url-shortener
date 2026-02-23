@@ -93,7 +93,7 @@ Redirects to the original URL.
 
 ---
 
-### GET `/urls/{slug}`
+### GET `/{slug}/info`
 
 Returns URL details and click analytics.
 
