@@ -161,7 +161,7 @@ spring.jpa.hibernate.ddl-auto=update
 ## Example Using cURL
 
 ```bash
-curl -X POST http://localhost:8080/urls \
+curl -X POST http://localhost:8080/shorten-url \
   -H "Content-Type: application/json" \
   -d '{"url":"https://example.com"}'
 ```
