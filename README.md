@@ -61,7 +61,7 @@ The project follows a layered architecture:
 
 ## Endpoints
 
-### POST `/urls`
+### POST `/shorten-url`
 
 Creates a shortened URL.
 
