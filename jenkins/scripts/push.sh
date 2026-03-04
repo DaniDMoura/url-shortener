@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-USERNAME=$1
-PASSWORD=$2
+IMAGE="$DOCKER_CREDS_USR/encurtadorurl:latest"
 
-IMAGE="$USERNAME/encurtadorurl:latest"
-
-printf '%s' "$PASSWORD" | docker login \
-                        --username "$USERNAME" \
+printf '%s' "$DOCKER_CREDS_PSW" | docker login \
+                        --username "$DOCKER_CREDS_USR" \
                         --password-stdin
 docker push "$IMAGE"
 
