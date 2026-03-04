@@ -7,12 +7,12 @@ pipeline {
     stages {
        stage('Build') {
             steps {
-              sh "./jenkins/scripts/build.sh $DOCKER_CREDS_USR"
+              sh './jenkins/scripts/build.sh ${DOCKER_CREDS_USR}'
             }
         }
        stage('Push') {
             steps {
-              sh "./jenkins/scripts/push.sh $DOCKER_CREDS_USR $DOCKER_CREDS_PSW"
+              sh './jenkins/scripts/push.sh ${DOCKER_CREDS_USR} ${DOCKER_CREDS_PSW}'
             }
         }
     }
