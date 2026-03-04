@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    environment {
+       DOCKER_CREDS = credentials('DOCKER_SECRET')
+    }
+
+    stages {
+       stage('Build') {
+            steps {
+              sh "./scripts/build.sh $DOCKER_CREDS_USR"
+            }
+        }
+       stage('Push') {
+            steps {
+              sh "./scripts/push.sh $DOCKER_CREDS_USR $DOCKER_CREDS_PSW"
+            }
+        }
+    }
+
+    post {
+       success {
+           mail(
+              to: 'mouradanilo061@gmail.com',
+              subject: "SUCCESS - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+              body: "Build concluída com sucesso.\n${env.BUILD_URL}"
+           )
+        }
+    }
+}
