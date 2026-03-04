@@ -3,4 +3,4 @@ set -euo pipefail
 
 USERNAME=$1
 
-docker build -t "$USERNAME/encurtadorurl:latest" -f ../Dockerfile ..
+docker build -t "$USERNAME/encurtadorurl:latest" .
