@@ -6,7 +6,9 @@ PASSWORD=$2
 
 IMAGE="$USERNAME/encurtadorurl:latest"
 
-docker login --username "$USERNAME" --password "$PASSWORD"
+printf '%s' "$PASSWORD" | docker login \
+                        --username "$USERNAME" \
+                        --password-stdin
 docker push "$IMAGE"
 
 
